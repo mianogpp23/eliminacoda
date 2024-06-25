@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studiomedico Cascino</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Assicurati che il percorso sia corretto -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #3b6c91; /* Verde mare per lo sfondo */
+            color: #fff; /* Testo bianco per il contrasto */
+        }
+        .header {
+            font-size: 88px; /* Dimensione del testo per l'intestazione */
+            text-transform: uppercase; /* Testo in maiuscolo */
+            margin-bottom: 30px; /* Spazio inferiore per separare dall'inizio del contenuto */
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: #fff; /* Sfondo bianco delle card */
+            color: #900; /* Colore rosso scuro per il testo */
+            border: 2px solid #ccc; /* Bordo grigio */
+            padding: 10px; /* Padding interno delle card */
+            width: 300px; /* Larghezza delle card */
+            margin: 20px; /* Margine tra le card */
+        }
+        .card h1 {
+            font-size: 48px; /* Dimensione del testo per il titolo */
+            text-transform: uppercase; /* Testo in maiuscolo */
+            margin-bottom: 10px; /* Spazio inferiore tra il titolo e la casella di testo */
+        }
+        .text-input {
+            font-size: 100px; /* Dimensione del testo della casella di testo */
+            width: 100%; /* Larghezza massima della casella di testo */
+            text-align: center;
+            border: none; /* Rimuove il bordo */
+            outline: none; /* Rimuove il contorno al focus */
+            background-color: transparent; /* Sfondo trasparente */
+            padding: 10px 0; /* Padding interno */
+        }
+        .footer-marquee {
+            background-color: #3b6c91; /* Colore di sfondo */
+            color: #fff; /* Colore del testo */
+            padding: 20px;
+            text-align: center;
+            font-size: 40px; /* Dimensione del testo per il footer */
+            line-height: 1.5; /* Altezza della riga per migliorare la leggibilità */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">STUDIOMEDICO CASCINO</div>
+    <div class="container">
+        <div class="card">
+            <h1>SALA 1</h1>
+            <form id="form" action="/remote" method="post">
+                <input class="text-input" type="text" name="text1" value="<%= initialValue1 %>" readonly>
+            </form>
+        </div>
+
+        <div class="card">
+            <h1>SALA 2</h1>
+            <form id="form2" action="/remote" method="post">
+                <input class="text-input" type="text" name="text2" value="<%= initialValue2 %>" readonly>
+            </form>
+        </div>
+
+        <div class="card">
+            <h1>SALA 3</h1>
+            <form id="form3" action="/remote" method="post">
+                <input class="text-input" type="text" name="text3" value="<%= initialValue3 %>" readonly>
+            </form>
+        </div>
+
+        <div class="card">
+            <h1>Infermeria</h1>
+            <form id="form4" action="/remote" method="post">
+                <input class="text-input" type="text" name="text4" value="<%= initialValue4 %>" readonly>
+            </form>
+        </div>
+    </div>
+
+    <!-- Testo di benvenuto a piè di pagina -->
+    <div class="footer-marquee">
+        <div class="marquee-text">
+            <span>Benvenuti nello Studio Medico Cascino.</span><br>
+            <span>Assicurarsi di prendere il numero relativo alla sala del vostro medico.</span><br>
+            <span>Controllare sul monitor quando è il vostro turno.</span><br>
+            <span>Sala 1 medico 1 medico2.</span><br>
+            <span>Sala 2 medico 3 medico4.</span><br>
+            <span>Sala 3 medico 5 medico6.</span><br>
+            <span>Per ulteriori informazioni chiedete alle assistenti.</span>
+        </div>
+    </div>
+
+    <!-- Script per il refresh automatico ogni 5 secondi -->
+    <script>
+        setInterval(function() {
+            location.reload();
+        }, 5000); // Ricarica la pagina ogni 5 secondi (5000 millisecondi)
+    </script>
+</body>
+</html>
